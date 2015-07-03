@@ -22,7 +22,10 @@
     "body-parser": "^1.13.1",
     "d3": "^3.5.5",
     "express": "^4.13.0",
-    "react": "^0.13.3"
+    "jquery": "^2.1.4",
+    "react": "^0.13.3",
+    "react-loader": "^1.4.0",
+    "react-router": "^0.13.3"
   },
   "devDependencies": {
     "babelify": "^6.1.2",
@@ -39,6 +42,7 @@
   },
   "scripts": {
     "start": "nodemon src/server.js & gulp watch",
-    "build": "gulp build"
+    "build": "gulp build",
+    "dist": "export NODE_ENV=production; gulp build"
   }
 }

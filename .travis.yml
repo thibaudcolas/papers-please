@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+    - '0.12'
+branches:
+    only:
+        - deploy
+deploy:
+    provider: heroku
+    api_key:
+        secure: ioAc+bQ8B0lZbxoOrAke+AGc02uWOFAcK3I+IPpX+2+jM25Q9yHkHbf55zL/N8sipPBmBhlhMcM0D60pryrA1DdRfVmhSH1yh4gWy3fez3XC7jsLNny4Ypk52UPY7331wL8cWi6ENp/F7qYOgFogRHh53VbWu5e9/oBDPedOEYHGxufOGTojLpTZ6MAv0nfP5MKR4gdtg7RmYzxOBOjDGv7r0XFQnVPE4d8uRTIpZvThWnpqvAd69pD+GfzaEkqRsYC5X0/X7ABB68ahmqinTl4qvyh/yNdR+T8Cyj0sjfVUFy9F6+G8Qt3zjYB3d8dtqwNE9KOUYbY1V/4fNcu/XCMmUrPcQBEwfXgg0rpBrTsTzKALqbD5SwJcGpaJYmG3dBxpV4vVjuKmhKkM6VT4EcuNexSqj0lPGJ/ue+sVzuo2Ee49Tkmuf2zlIkU3pDYuLLYzN941MOO/1vy6XWNDFXUKROtOCWxDA8OKYea5me5ZO/EclK3tOvnw+dDkkYeF0cQSNLDL+2+2d8YD17Q8we7MBYhNAXaMyPEmTYnfdDGadWMaY17+/AAhM2uf3/rY+hOOstPI8nEEuUEN9Pg1r5/2gZkf1i/ZlYnfWCO0lkn21iXOPVy8ofaI66bAFlmRNKCh2cMuXbRthgkdynPvIPuF19qYAXbhNKuaowdafyg=
+    app: papers-please
+    on:
+        repo: papers-please/papers-please

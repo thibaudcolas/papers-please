@@ -1,6 +1,8 @@
 'use strict';
 
 import React from 'react';
+import Loader from 'react-loader';
+import $ from 'jquery';
 import ProgressChart from './progress-chart';
 import formatters from '../util/formatters';
 
@@ -10,13 +12,21 @@ export default React.createClass({
     getInitialState() {
         const rate = 10;
 
+        $.getJSON('/hello', data => {
+            this.setState({
+                loaded: data.test
+            });
+        });
+
         return {
 
             // This is the parameter that will make our results change.
             rate: rate,
 
             // This is the results from our calculation.
-            forecast: this.computeStubData(rate)
+            forecast: this.computeStubData(rate),
+
+            loaded: false
         };
     },
 
@@ -33,9 +43,10 @@ export default React.createClass({
         const rateNumber = formatters.vaguePercent(this.state.rate / 100);
 
         return (
-            <div className='app card'>
+            <div className='app card container-fluid'>
                 <div className="row">
                     <div className="col-xs-12">
+                        <h1>Papers, Please!</h1>
                         <p className='pull-right'>{goalNumber + ' goal'}</p>
                         <p className='text-left'>Money</p>
                         <ProgressChart {...this.state}/>
@@ -51,6 +62,13 @@ export default React.createClass({
                             onClick={this.changeRate}
                             {...rangeConfig}
                         />
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-xs-12" style={{minHeight: '80px'}}>
+                        <Loader loaded={this.state.loaded}>
+                            <p>Loaded</p>
+                        </Loader>
                     </div>
                 </div>
             </div>
