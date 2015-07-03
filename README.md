@@ -5,7 +5,7 @@
 >
 > TODO
 
-- [Production site](http://www.papers-please.xyz/)
+- [Production site](https://papers-please.herokuapp.com/)
 
 ## Installation
 
