@@ -3,26 +3,42 @@
   "version": "0.1.0",
   "description": "Papers Please",
   "private": true,
-  "main": "main.js",
-  "config": {
-  },
-  "scripts": {
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/papers-please/papers-please.git"
-  },
+  "main": "src/server.js",
+  "config": {},
+  "homepage": "https://github.com/papers-please/papers-please",
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/papers-please/papers-please/issues"
   },
-  "homepage": "https://github.com/papers-please/papers-please",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/papers-please/papers-please.git"
+  },
   "engines": {
     "node": "0.12"
   },
   "dependencies": {
+    "body-parser": "^1.13.1",
+    "d3": "^3.5.5",
+    "express": "^4.13.0",
+    "react": "^0.13.3"
   },
   "devDependencies": {
+    "babelify": "^6.1.2",
+    "browser-sync": "^2.7.13",
+    "browserify": "^10.2.4",
+    "browserify-incremental": "^3.0.1",
+    "gulp": "^3.9.0",
+    "gulp-pleeease": "^1.2.0",
+    "gulp-sass": "^2.0.3",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.6",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "scripts": {
+    "start": "nodemon src/server.js & gulp watch",
+    "build": "gulp build"
   }
 }

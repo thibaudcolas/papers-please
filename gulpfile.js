@@ -3,11 +3,11 @@
 var path = require('path');
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
-var bufferify = require('vinyl-buffer');
 var gutil = require('gulp-util');
 var browserify = require('browserify');
 var browserifyInc = require('browserify-incremental');
 var babelify = require('babelify');
+var buffer = require('vinyl-buffer');
 var source = require('vinyl-source-stream');
 var sass = require('gulp-sass');
 var plz = require('gulp-pleeease');
@@ -29,14 +29,14 @@ var config = {
     }
 };
 
-var browserifyInstance = prod ? browserify : browserifyInc;
+var browserifyInstance = production ? browserify : browserifyInc;
 
 var bundler = browserifyInstance({
     cache: {},
     transform: [babelify],
     packageCache: {},
-    debug: !prod,
-    fullPaths: !prod
+    debug: !production,
+    fullPaths: !production
 });
 
 bundler.add(path.resolve(config.paths.client, 'site.js'));
@@ -48,9 +48,9 @@ gulp.task('js', function() {
             bs.notify(err.message, 10000);
             this.emit('end');
         })
-        .pipe(source('bundle.js'))
+        .pipe(source('site.js'))
         .pipe(buffer())
-        .pipe(prod ? uglify() : gutil.noop())
+        .pipe(production ? uglify() : gutil.noop())
         .pipe(gulp.dest(config.paths.assets))
         .pipe(bs.stream());
 });

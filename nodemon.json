@@ -1,7 +1,10 @@
 {
     "verbose": true,
     "ignore": [
-        "node_modules",
-        ".git/"
+        "node_modules/",
+        ".git/",
+        "src/client/",
+        "src/sass/",
+        "src/public/"
     ]
 }
