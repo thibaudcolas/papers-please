@@ -1,0 +1,37 @@
+@import "variables";
+
+body {
+    background-color: #B2DBBF;
+}
+.card {
+    background-color: #f8faf5;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+    border-radius: 3px;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 15px;
+}
+.chart {
+    user-select: none;
+}
+.progress-chart .chart {
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+.chart text {
+    stroke-width: 0;
+}
+.axis path,
+.axis line {
+    fill: none;
+    stroke-width: 0;
+}
+.money--low {
+    fill: #B2DBBF;
+}
+.money--high {
+    fill: #70C1B3;
+}
+.money--goal {
+    fill: #247BA0;
+}
