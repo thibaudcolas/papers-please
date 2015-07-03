@@ -39,6 +39,7 @@
   },
   "scripts": {
     "start": "nodemon src/server.js & gulp watch",
-    "build": "gulp build"
+    "build": "gulp build",
+    "dist": "export NODE_ENV=production; gulp build"
   }
 }

@@ -14,7 +14,6 @@
 From the command-line:
 
 ```sh
-cd ~/Development/sites/
 git clone git@github.com:papers-please/papers-please.git
 cd papers-please
 ```
@@ -29,8 +28,6 @@ To install our dependencies, run:
 
 ```sh
 npm install
-# If that's your thing, install the git hooks:
-./.githooks/deploy
 ```
 
 ## Working on the project
@@ -44,6 +41,13 @@ npm run start
 # You can then go to http://localhost:3000/ to see the site running.
 # When you feel like it, you can run the tests.
 npm run test
+~~~
+
+Other tasks:
+
+~~~
+npm run build
+npm run dist
 ~~~
 
 ## Deployment
