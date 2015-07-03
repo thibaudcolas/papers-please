@@ -1,8 +1,6 @@
-[papers-please]() [![Travis](https://img.shields.io/travis/papers-please/papers-please.svg?style=flat-square)](https://travis-ci.org/papers-please/papers-please)
+[papers-please](https://papers-please.herokuapp.com/) [![Travis](https://img.shields.io/travis/papers-please/papers-please.svg?style=flat-square)](https://travis-ci.org/papers-please/papers-please)
 ==========
 
-> TODO
->
 > TODO
 
 - [Production site](https://papers-please.herokuapp.com/)
@@ -52,7 +50,7 @@ npm run dist
 
 ## Deployment
 
-The site is deployed on [Heroku](http://heroku.com/).
+The site is deployed on [Heroku](http://heroku.com/). It is automatically deployed with Travis, but you can also trigger manual deploys.
 
 > To deploy the site, you'll need the Heroku Toolbelt: `brew install heroku-toolbelt`, an Heroku Account, and contributor access on the project.
 

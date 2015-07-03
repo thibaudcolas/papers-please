@@ -12,7 +12,6 @@ var source = require('vinyl-source-stream');
 var sass = require('gulp-sass');
 var plz = require('gulp-pleeease');
 var bs = require('browser-sync').create('main');
-var reload = bs.reload;
 
 var production = (process.env.NODE_ENV === 'production');
 
@@ -43,7 +42,7 @@ bundler.add(path.resolve(config.paths.client, 'site.js'));
 
 gulp.task('js', function() {
     return bundler.bundle()
-        .on('error', function handleError(err) {
+        .on('error', function(err) {
             gutil.log(err.message);
             bs.notify(err.message, 10000);
             this.emit('end');
@@ -58,14 +57,15 @@ gulp.task('js', function() {
 gulp.task('css', function() {
     return gulp.src(path.join(config.paths.sass, '**', '*.scss'))
         .pipe(sass({
-            errLogToConsole: false,
-            sourceComments: false,
-            onError: function(err) {
-                var message = err.file + ' (' + err.line + ':' + err.column + '): ' + err.message
-                gutil.log(message);
-                bs.notify(message, 10000);
-            }
+            errLogToConsole: true,
+            sourceComments: false
         }))
+        .on('error', function(err) {
+            var message = err.file + ' (' + err.line + ':' + err.column + '): ' + err.message
+            gutil.log(message);
+            bs.notify(message, 10000);
+            this.emit('end');
+        })
         .pipe(plz(config.PlzOptions))
         .pipe(gulp.dest(config.paths.assets))
         .pipe(bs.stream());

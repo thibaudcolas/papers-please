@@ -36,6 +36,7 @@ export default React.createClass({
             <div className='app card'>
                 <div className="row">
                     <div className="col-xs-12">
+                        <h1>Papers, Please!</h1>
                         <p className='pull-right'>{goalNumber + ' goal'}</p>
                         <p className='text-left'>Money</p>
                         <ProgressChart {...this.state}/>
