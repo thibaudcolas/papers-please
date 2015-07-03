@@ -1,0 +1,28 @@
+{
+  "name": "papers-please",
+  "version": "0.1.0",
+  "description": "Papers Please",
+  "private": true,
+  "main": "main.js",
+  "config": {
+  },
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/papers-please/papers-please.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/papers-please/papers-please/issues"
+  },
+  "homepage": "https://github.com/papers-please/papers-please",
+  "engines": {
+    "node": "0.12"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
