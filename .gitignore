@@ -3,8 +3,6 @@
 # -------------------------------------------------
 # build
 # dist
-src/public/site.js
-src/public/screen.css
 
 # -------------------------------------------------
 # OS generated files
