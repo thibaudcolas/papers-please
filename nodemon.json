@@ -1,15 +1,7 @@
 {
     "verbose": true,
     "ignore": [
-        "*.test.js",
-        "fixtures/",
-        "test/",
         "node_modules",
-        "client/",
-        "public/js/",
         ".git/"
-    ],
-    "execMap": {
-        "js": "node --harmony"
-    }
+    ]
 }

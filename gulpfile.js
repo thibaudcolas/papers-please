@@ -1,10 +1,7 @@
 'use strict';
 
 var path = require('path');
-'use strict';
-
 var gulp = require('gulp');
-var path = require('path');
 var uglify = require('gulp-uglify');
 var bufferify = require('vinyl-buffer');
 var gutil = require('gulp-util');
@@ -20,17 +17,15 @@ var reload = bs.reload;
 var production = (process.env.NODE_ENV === 'production');
 
 var rootPath = path.join('./');
-var clientPath = path.join(rootPath, 'client');
-var serverPath = path.join(rootPath, 'server');
+var sourcePath = path.join(rootPath, 'src');
 
 var config = {
     paths: {
         root: rootPath,
-        js: path.join(clientPath, 'js'),
-        sass: path.join(clientPath, 'sass'),
-        views: path.join(serverPath, 'html'),
-        assets: path.join(rootPath, 'public'),
-        css: path.join(rootPath, 'public', 'css')
+        client: path.join(sourcePath, 'client'),
+        sass: path.join(sourcePath, 'sass'),
+        views: path.join(sourcePath, 'templates'),
+        assets: path.join(sourcePath, 'public')
     }
 };
 
@@ -44,7 +39,7 @@ var bundler = browserifyInstance({
     fullPaths: !prod
 });
 
-bundler.add(path.resolve(config.paths.js, 'site.js'));
+bundler.add(path.resolve(config.paths.client, 'site.js'));
 
 gulp.task('js', function() {
     return bundler.bundle()
@@ -72,7 +67,7 @@ gulp.task('css', function() {
             }
         }))
         .pipe(plz(config.PlzOptions))
-        .pipe(gulp.dest(config.paths.css))
+        .pipe(gulp.dest(config.paths.assets))
         .pipe(bs.stream());
 });
 
@@ -80,7 +75,7 @@ gulp.task('watch', ['js', 'css'], function() {
     bs.init({
         notify: true,
         open: true,
-        proxy: 'localhost:3000'
+        proxy: 'localhost:5000'
     });
 
     var justReload = [
@@ -89,7 +84,7 @@ gulp.task('watch', ['js', 'css'], function() {
 
     gulp.watch(justReload, bs.reload);
     gulp.watch(path.join(config.paths.sass, '**', '*.scss'), ['css']);
-    gulp.watch(path.join(config.paths.jsSrc, '**', '*.js'), ['js']);
+    gulp.watch(path.join(config.paths.client, '**', '*.js'), ['js']);
 });
 
 gulp.task('build', ['js', 'css'], function(done) {
