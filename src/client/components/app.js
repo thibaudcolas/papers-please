@@ -22,7 +22,7 @@ export default React.createClass({
                 <div className="row">
                     <div className="col-xs-12">
                         <Link to="/">
-                            <h1>Papers, Please!</h1>
+                            <h1>Paper Preen</h1>
                         </Link>
                         <RouteHandler callback={this.retrieveReport} report={this.state.report}/>
                     </div>

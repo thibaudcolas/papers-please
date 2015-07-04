@@ -15,11 +15,11 @@ export default React.createClass({
 
     render() {
         return (
-            <div className='container'>
-                <div className='row'>
+            <div className='container-fluid'>
+                <div className='row-fluid'>
                     <div className='col-md-6 col-md-offset-3' id='alert-container'> </div>
                 </div>
-                <div className='row'>
+                <div className='row-fluid'>
                     <div className='col-md-8 column-left'>
                         <div className='text-large' id='tutorial-text'>
                             {this.props.report ? this.props.report.text : ''}
