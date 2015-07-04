@@ -35,6 +35,7 @@ export default React.createClass({
             processData: false,
             type: 'POST',
             success: data => {
+                data = JSON.parse(data);
                 this.props.callback(data, () => {
                     this.transitionTo('report');
                 });

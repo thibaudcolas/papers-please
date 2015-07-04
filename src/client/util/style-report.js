@@ -1,4 +1,4 @@
-import $ from 'jquery';
+require('bootstrap');
 
 // remove metric highlighting
 function removeMetricHighlighting(el) {
@@ -44,7 +44,7 @@ function setDisplaySynonyms(val) {
 }
 
 // enter metrics into the results table
-function addMetricsToMetricsTables() {
+function addMetricsToMetricsTables(metrics) {
     $("#character-count").text(metrics.character_count.toString());
     $("#word-count").text(metrics.word_count.toString());
     $("#vocabulary-size").text(metrics.vocabulary_size.toString());
@@ -606,25 +606,25 @@ function showAlert(alertStr) {
 export default {
 
     // run at start
-    init: function() {
-        var text = null;
-        var tokens = null;
-        var metrics = null;
-        var tokenMasks = [null, null, null, null, null, null, null, null, null];
-        var activeTokenMasks = [false, false, false, false, false, false, false, false, false];
-        var displaySynonyms = true;
-        var textField = null;
-        var metricsTables = null;
-        var metricsElements = null;
-        var analyzeTextButton = null;
-        var cleanTextButton = null;
-        var displaySynonymsButton = null;
-        var synonymsHoverText = null;
-        var spinnerContainer = null;
-        var alertContainer = null;
-        var wordFreqMetricEl = null;
-        var bigramFreqMetricEl = null;
-        var trigramFreqMetricEl = null;
+    init: function(result) {
+
+        window.text = null;
+        window.tokens = null;
+        window.metrics = null;
+        window.tokenMasks = [null, null, null, null, null, null, null, null, null];
+        window.activeTokenMasks = [false, false, false, false, false, false, false, false, false];
+        window.displaySynonyms = true;
+        window.textField = null;
+        window.metricsTables = null;
+        window.metricsElements = null;
+        window.analyzeTextButton = null;
+        window.cleanTextButton = null;
+        window.displaySynonymsButton = null;
+        window.synonymsHoverText = null;
+        window.alertContainer = null;
+        window.wordFreqMetricEl = null;
+        window.bigramFreqMetricEl = null;
+        window.trigramFreqMetricEl = null;
 
         // find important DOM elements for future use
         textField = $("#tutorial-text");
@@ -634,7 +634,6 @@ export default {
         cleanTextButton = $("#clean-text");
         displaySynonymsButton = $("#synonyms-button");
         synonymsHoverText = $("#synonyms-hover-text");
-        spinnerContainer = $("#spinner-container");
         alertContainer = $("#alert-container");
         wordFreqMetricEl = $("#word-freq");
         bigramFreqMetricEl = $("#bigram-freq");
@@ -705,8 +704,6 @@ export default {
             top: 'auto', // Top position relative to parent in px
             left: 'auto' // Left position relative to parent in px
         };
-        var spinner = new Spinner(spinnerOpts);
-        spinnerContainer.hide();
 
         // get rid of active state on the mobile menu button
         $(".navbar-toggle").on("click", function() {
@@ -725,64 +722,20 @@ export default {
             }
         });
 
-        // analyze text and display results
-        analyzeTextButton.click(function() {
-
-            ga('send', 'event', 'analyze-tutorial-text', 'click');
-
-            // get rid of active state on the analysis button
-            analyzeTextButton.blur();
-
-            // get text
-            text = textField.text().trim();
-
-            // put UI in analyzing mode
-            analyzeTextButton.button("loading");
-            metricsTables.hide();
-            $(".metric-active").each(function(idx, el) {
-                el = $(el);
-                removeMetricHighlighting(el);
-            });
-            $(".metric").removeClass("metric-active");
-            spinnerContainer.show();
-            spinner.spin(document.getElementById("spinner-container"));
-
-            // send text to the server for analysis
-            $.ajax({
-                type: "POST",
-                url: "/analyze-text",
-                dataType: "json",
-                data: {
-                    html: text
-                },
-                success: function(result, textStatus, error) {
-
-                    // success - display analysis results and add synonym tooltips
-                    text = result.text;
-                    tokens = result.tokens;
-                    metrics = result.metrics;
-                    spinner.stop();
-                    spinnerContainer.hide();
-                    addMetricsToMetricsTables();
-                    textField.html(renderTokensToHtml());
-                    metricsTables.show();
-                    analyzeTextButton.button("complete");
-                    setTimeout(function() {
-                        analyzeTextButton.prop("disabled", true);
-                    }, 10);
-                    $(".metric").addClass("metric-active");
-                    setDisplaySynonyms(true);
-                    cleanTextButton.removeClass("active");
-
-                },
-                error: function(request, textStatus, error) {
-
-                    // error - display a message
-                    showAlert("Cannot analyze text: " + error);
-                }
-            });
-
-        });
+        // success - display analysis results and add synonym tooltips
+        text = result.text;
+        tokens = result.tokens;
+        metrics = result.metrics;
+        addMetricsToMetricsTables(metrics);
+        textField.html(renderTokensToHtml());
+        metricsTables.show();
+        analyzeTextButton.button("complete");
+        setTimeout(function() {
+            analyzeTextButton.prop("disabled", true);
+        }, 10);
+        $(".metric").addClass("metric-active");
+        setDisplaySynonyms(true);
+        cleanTextButton.removeClass("active");
 
         // clean text formatting for copy-pasting
         cleanTextButton.click(function() {

@@ -8,7 +8,9 @@ export default React.createClass({
 
     componentDidMount() {
         console.log(this.props.report);
-        styleReport.init();
+        if (this.props.report) {
+            styleReport.init(this.props.report);
+        }
     },
 
     render() {
@@ -24,11 +26,7 @@ export default React.createClass({
                         </div>
                     </div>
                     <div className='col-md-4 column-right'>
-                        <button type='button' className='btn btn-primary btn-lg btn-block' data-loading-text='Analyzing...'
-                                data-complete-text='Analysis complete' id='analyze-text'><span className='glyphicon glyphicon-search'></span> Analyze text</button>
-                        <div id='spinner-container'> </div>
                         <div id='metrics-tables'>
-                            <button type='button' className='btn btn-default btn-lg btn-block' id='clean-text'><span className='glyphicon glyphicon-download'></span> Clean text formatting</button>
                             <p className='text-large'>Metrics for editing <a href='/metrics#editing-metrics' target='_blank' className='metrics-info-link' id='editing-metrics-link'><span className='glyphicon glyphicon-info-sign'></span></a></p>
                             <table className='table table-bordered table-hover text-medium'>
                                 <tr> <td><span className='metric' data-metric='synonyms'>synonyms</span></td> <td><span className='glyphicon glyphicon-ok-circle' id='synonyms-button'></span>

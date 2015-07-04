@@ -4,13 +4,15 @@ import React from 'react';
 import Loader from 'react-loader';
 import { RouteHandler, Link } from 'react-router';
 
+import stub from '../util/stub';
+
 export default React.createClass({
     displayName: 'App',
 
     getInitialState() {
         return {
             loaded: false,
-            report: null
+            report: stub
         };
     },
 
