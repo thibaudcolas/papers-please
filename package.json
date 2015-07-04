@@ -26,7 +26,8 @@
     "multer": "^0.1.8",
     "react": "^0.13.3",
     "react-loader": "^1.4.0",
-    "react-router": "^0.13.3"
+    "react-router": "^0.13.3",
+    "request": "^2.58.0"
   },
   "devDependencies": {
     "babelify": "^6.1.2",
