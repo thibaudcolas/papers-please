@@ -27,7 +27,7 @@ export default React.createClass({
                     </div>
                     <div className='col-md-4 column-right'>
                         <div id='metrics-tables'>
-                            <p className='text-large'>Metrics for editing <a href='/metrics#editing-metrics' target='_blank' className='metrics-info-link' id='editing-metrics-link'><span className='glyphicon glyphicon-info-sign'></span></a></p>
+                            <p className='text-large'>Metrics for editing</p>
                             <table className='table table-bordered table-hover text-medium'>
                                 <tr> <td><span className='metric' data-metric='synonyms'>synonyms</span></td> <td><span className='glyphicon glyphicon-ok-circle' id='synonyms-button'></span>
                                          <span> </span><span id='synonyms-hover-text'>hover mouse over words in text to see synonyms</span></td> </tr>
