@@ -4,6 +4,7 @@ import React from 'react';
 import Loader from 'react-loader';
 import $ from 'jquery';
 import ProgressChart from './progress-chart';
+import PaperSubmissionForm from './paper-submission-form';
 import formatters from '../util/formatters';
 
 export default React.createClass({
@@ -47,6 +48,11 @@ export default React.createClass({
                 <div className="row">
                     <div className="col-xs-12">
                         <h1>Papers, Please!</h1>
+                        <PaperSubmissionForm/>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-xs-12">
                         <p className='pull-right'>{goalNumber + ' goal'}</p>
                         <p className='text-left'>Money</p>
                         <ProgressChart {...this.state}/>
