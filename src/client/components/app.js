@@ -3,11 +3,16 @@
 import React from 'react';
 import Loader from 'react-loader';
 import { RouteHandler, Link } from 'react-router';
+import TransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 
 import stub from '../util/stub';
 
 export default React.createClass({
     displayName: 'App',
+
+    contextTypes: {
+        router: React.PropTypes.func
+    },
 
     getInitialState() {
         return {
@@ -17,6 +22,9 @@ export default React.createClass({
     },
 
     render() {
+        const name = this.context.router.getCurrentPath();
+        const segment = name.split('/')[1] || 'root';
+
         return (
             <div className='app card container-fluid'>
                 <div className="row">
@@ -24,7 +32,9 @@ export default React.createClass({
                         <Link to="/">
                             <h1>Paper Preen</h1>
                         </Link>
-                        <RouteHandler callback={this.retrieveReport} report={this.state.report}/>
+                        <TransitionGroup component="div" transitionName={segment === 'root' ? 'reversePageSwap' : 'pageSwap'}>
+                            <RouteHandler key={segment} callback={this.retrieveReport} report={this.state.report}/>
+                        </TransitionGroup>
                     </div>
                 </div>
             </div>
