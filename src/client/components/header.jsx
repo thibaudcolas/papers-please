@@ -2,7 +2,7 @@ import React from 'react';
 
 export default React.createClass({
     displayName: 'NavHeader',
-    
+
     render() {
         return (
 
@@ -15,7 +15,7 @@ export default React.createClass({
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand page-scroll" href="#page-top"><img src="/public/landing/img/logo.png" alt="PaperPreen"></a>
+                    <a class="navbar-brand page-scroll" href="#/app"><img src="/public/landing/img/logo.png" alt="PaperPreen"></a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">

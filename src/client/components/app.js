@@ -31,7 +31,6 @@ export default React.createClass({
             <div className='app card container-fluid'>
                 <div className="row">
                     <div className="col-xs-12">
-                        
                         <TransitionGroup component="div" transitionName={segment === 'root' ? 'reversePageSwap' : 'pageSwap'}>
                             <RouteHandler key={segment} callback={this.retrieveReport} report={this.state.report}/>
                         </TransitionGroup>
