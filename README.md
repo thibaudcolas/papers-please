@@ -1,9 +1,11 @@
-[papers-please](https://papers-please.herokuapp.com/) [![Travis](https://img.shields.io/travis/papers-please/papers-please.svg?style=flat-square)](https://travis-ci.org/papers-please/papers-please)
+[papers-please](http://www.paper-preen.co/) [![Travis](https://img.shields.io/travis/papers-please/papers-please.svg?style=flat-square)](https://travis-ci.org/papers-please/papers-please)
 ==========
 
-> TODO
+![paper-preeen](http://www.paper-preen.co/public/big-logo.png)
 
-- [Production site](https://papers-please.herokuapp.com/)
+> Perfect research papers in an instant
+
+- [Production site](http://www.paper-preen.co/)
 
 ## Installation
 
