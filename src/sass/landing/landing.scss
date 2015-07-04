@@ -1,0 +1,83 @@
+// <!-- Custom Fonts -->
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic);
+
+@import "variables";
+@import "mixins";
+@import "fontawesome";
+@import "animate";
+@import "creative";
+
+
+.navbar-brand {
+  height:100px;
+}
+.affix{
+  .navbar-brand {
+    background: url('../landing/img/logo-dark.png') no-repeat center center;
+    img{
+      visibility: hidden;
+    }
+  }
+}
+
+
+@media (min-width: 768px) {
+  .navbar-nav>li>a {
+    padding-top: 40px;
+    padding-bottom: 35px;
+  }
+}
+
+.pricing{
+    background: #f7f7f7;
+  .flat .plan {
+    border-radius: 6px;
+    list-style: none;
+    padding: 0 0 20px;
+    margin: 0 0 15px;
+    background: #fff;
+    text-align: center;
+  }
+  .flat .plan li {
+    padding: 10px 15px;
+    color: #ccc;
+    border-top: 1px solid #f5f5f5;
+    -webkit-transition: 300ms;
+    transition: 300ms;
+  }
+  .flat .plan li.plan-price {
+    border-top: 0;
+  }
+  .flat .plan li.plan-name {
+    border-radius: 6px 6px 0 0;
+    padding: 15px;
+    font-size: 24px;
+    line-height: 24px;
+    color: #fff;
+    background: #000;
+    margin-bottom: 30px;
+    border-top: 0;
+  }
+  .flat .plan li > strong {
+    color: #000;
+  }
+  .flat .plan li.plan-action {
+    margin-top: 10px;
+    border-top: 0;
+  }
+  .flat .plan.featured {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  .flat .plan.featured li.plan-name {
+    background: #21A9C0;
+  }
+  .flat .plan.featured:hover li.plan-name {
+    background: #21A9C0;
+  }
+  .flat .plan:hover li.plan-name {
+    background: #000;
+  }
+}
