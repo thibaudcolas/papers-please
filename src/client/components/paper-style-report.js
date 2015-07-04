@@ -46,7 +46,7 @@ export default React.createClass({
                                 <tr> <td>frequent bigrams (stems)</td> <td id='bigram-freq'></td> </tr>
                                 <tr> <td>frequent trigrams (stems)</td> <td id='trigram-freq'></td> </tr>
                             </table>
-                            <p className='text-large'>General metrics <a href='/metrics#general-metrics' target='_blank' className='metrics-info-link' id='general-metrics-link'><span className='glyphicon glyphicon-info-sign'></span></a></p>
+                            <p className='text-large'>General metrics</p>
                             <table className='table table-bordered table-hover text-medium'>
                                 <tr> <td>characters</td> <td id='character-count'></td> </tr>
                                 <tr> <td>words</td> <td id='word-count'></td> </tr>
