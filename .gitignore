@@ -5,6 +5,7 @@
 # dist
 src/public/site.js
 src/public/screen.css
+uploads/*
 
 # -------------------------------------------------
 # OS generated files
