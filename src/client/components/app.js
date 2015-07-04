@@ -26,12 +26,12 @@ export default React.createClass({
         const segment = name.split('/')[1] || 'root';
 
         return (
+
+
             <div className='app card container-fluid'>
                 <div className="row">
                     <div className="col-xs-12">
-                        <Link to="/">
-                            <h1>Paper Preen</h1>
-                        </Link>
+                        
                         <TransitionGroup component="div" transitionName={segment === 'root' ? 'reversePageSwap' : 'pageSwap'}>
                             <RouteHandler key={segment} callback={this.retrieveReport} report={this.state.report}/>
                         </TransitionGroup>
