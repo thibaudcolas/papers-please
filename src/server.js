@@ -11,8 +11,13 @@ app.set('port', (process.env.PORT || 5000));
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, 'templates', 'landing.html'));
+});
+
+app.get('/app', function(req, res) {
     res.sendFile(path.join(__dirname, 'templates', 'index.html'));
 });
+
 
 app.get('/hello', function(req, res) {
     res.send(JSON.stringify({
