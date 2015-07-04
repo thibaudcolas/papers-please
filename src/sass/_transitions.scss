@@ -1,0 +1,162 @@
+
+
+/*============================================================================
+  Transitions
+==============================================================================*/
+
+/*============================================================================
+  pageSwap
+==============================================================================*/
+
+.pageSwap-enter {
+    animation: pageSwap .3s ease;
+}
+
+.pageSwap-enter.pageSwap-enter-active {
+}
+
+.pageSwap-leave {
+    transition: all .15s linear;
+    opacity: 1;
+}
+
+.pageSwap-leave.pageSwap-leave-active {
+    opacity: .01;
+}
+
+@keyframes pageSwap {
+    from {
+        opacity: .01;
+        transform: translateX(3em);
+    }
+    to   {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/*============================================================================
+  reversePageSwap
+==============================================================================*/
+
+.reversePageSwap-enter {
+    animation: reversePageSwap .3s ease;
+}
+
+.reversePageSwap-enter.reversePageSwap-enter-active {
+}
+
+.reversePageSwap-leave {
+    transition: all .15s linear;
+    opacity: 1;
+}
+
+.reversePageSwap-leave.reversePageSwap-leave-active {
+    opacity: .01;
+}
+
+@keyframes reversePageSwap {
+    from {
+        opacity: .01;
+        transform: translateX(-3em);
+    }
+    to   {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/*============================================================================
+  fade
+==============================================================================*/
+
+.fade-enter {
+    animation: fade .6s ease-out;
+}
+
+.fade-enter.fade-enter-active {
+}
+
+.fade-leave {
+    transition: all .15s linear;
+    opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+    opacity: .01;
+}
+
+@keyframes fade {
+    from {
+        opacity: .01;
+    }
+    to   {
+        opacity: 1;
+    }
+}
+
+/*============================================================================
+  slideRightToLeft
+==============================================================================*/
+%position-absolute-full {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.slideRightToLeft-enter {
+//  @extend %position-absolute-full;
+    animation: slideRightToLeft .4s ease-out;
+}
+.slideRightToLeft-enter.slideRightToLeft-enter-active {
+}
+
+.slideRightToLeft-leave {
+    @extend %position-absolute-full;
+    transition: transform .3s linear;
+}
+
+.slideRightToLeft-leave.slideRightToLeft-leave-active {
+    transform: translateX(-100%);
+}
+
+@keyframes slideRightToLeft {
+    from {
+        transform: translateX(100%);
+    }
+    to   {
+        transform: translateX(0);
+    }
+}
+
+/*============================================================================
+  slideLeftToRight
+==============================================================================*/
+
+.slideLeftToRight-enter {
+    @extend %position-absolute-full;
+    animation: slideLeftToRight .4s ease-out;
+}
+.slideLeftToRight-enter.slideLeftToRight-enter-active {
+}
+
+.slideLeftToRight-leave {
+//  @extend %position-absolute-full;
+    transform: translateX(0);
+    transition: transform .3s linear;
+}
+
+.slideLeftToRight-leave.slideLeftToRight-leave-active {
+    transform: translateX(100%);
+}
+
+@keyframes slideLeftToRight {
+    from {
+        transform: translateX(-100%);
+    }
+    to   {
+        transform: translateX(0);
+    }
+}

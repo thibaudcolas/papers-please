@@ -1,0 +1,19 @@
+.navbar{
+  background-color: #222222;
+  border-color:#222222;
+  border-radius:0;
+  min-height:60px;
+  margin-bottom: 20px;
+}
+.navbar-brand {
+  padding:5px;
+  img{
+    max-height:50px;
+  }
+}
+
+@media (min-width: 768px){
+  .navbar-nav>li>a {
+    padding-top: 20px;
+  }
+}
