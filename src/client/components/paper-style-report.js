@@ -12,6 +12,10 @@ export default React.createClass({
             styleReport.init(this.props.report);
         }
     },
+    
+    toggletable() {
+      jQuery('#articletable').toggle();
+    },
 
     render() {
         return (<div>          
@@ -110,15 +114,157 @@ export default React.createClass({
                 </div>
                 
                 <div role="tabpanel" className="tab-pane" id="usability">
-
+                    <img src="public/img/visualisations3.png" />
                 </div>
                 
                 <div role="tabpanel" className="tab-pane" id="style">
-
+                  <table className="table">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Column heading</th>
+                            <th>Column heading</th>
+                            <th>Column heading</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr className="active">
+                            <th scope="row">1</th>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                          </tr>
+                          <tr className="success">
+                            <th scope="row">3</th>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                          </tr>
+                          <tr className="info">
+                            <th scope="row">5</th>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">6</th>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                          </tr>
+                          <tr className="warning">
+                            <th scope="row">7</th>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">8</th>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                          </tr>
+                          <tr className="danger">
+                            <th scope="row">9</th>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                          </tr>
+                        </tbody>
+                      </table>
                 </div>
                 
                 <div role="tabpanel" className="tab-pane" id="reference">
+                    <h1>Choose the standard you would like to comply with.</h1>
+                    <div className="form-group">
+                      <select className="form-control" onChange={ this.toggletable }>
+                        <option></option>
+                        <option>Nature</option>
+                        <option>Journal Of American Chemical Society</option>
+                        <option>Lorem ipsum</option>
+                        <option>Great Journal</option>
+                      </select>
+                    </div>
 
+                    
+                    <table className="table" id="articletable" style={{'display':'none'}}>
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Column heading</th>
+                            <th>Column heading</th>
+                            <th>Column heading</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr className="active">
+                            <th scope="row">1</th>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                          </tr>
+                          <tr className="success">
+                            <th scope="row">3</th>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                          </tr>
+                          <tr className="info">
+                            <th scope="row">5</th>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">6</th>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                          </tr>
+                          <tr className="warning">
+                            <th scope="row">7</th>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">8</th>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                          </tr>
+                          <tr className="danger">
+                            <th scope="row">9</th>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                          </tr>
+                        </tbody>
+                      </table>
                 </div>
               </div>
             </div>
