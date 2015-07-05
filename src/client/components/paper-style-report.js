@@ -26,8 +26,8 @@ export default React.createClass({
             <div className='container-fluid'>
 
               <ul className="nav nav-tabs" role="tablist">
-                <li role="presentation" className="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Overview</a></li>
-                <li role="presentation"><a href="#grammar" aria-controls="grammar" role="tab" data-toggle="tab">Grammar</a></li>
+                <li role="presentation"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Overview</a></li>
+                <li role="presentation" className="active"><a href="#grammar" aria-controls="grammar" role="tab" data-toggle="tab">Grammar</a></li>
                 <li role="presentation"><a href="#plagiarism" aria-controls="plagiarism" role="tab" data-toggle="tab">Plagiarism</a></li>
                 <li role="presentation"><a href="#usability" aria-controls="usability" role="tab" data-toggle="tab">Usability</a></li>
                 <li role="presentation"><a href="#style" aria-controls="style" role="tab" data-toggle="tab">Style Guide Compliance</a></li>
@@ -38,7 +38,7 @@ export default React.createClass({
               <div className="tab-content">
 
 
-                <div role="tabpanel" className="tab-pane active" id="overview">
+                <div role="tabpanel" className="tab-pane" id="overview">
                   <div className="panel panel-success">
                     <div className="panel-heading text-center">
                       <h3 className="panel-title">Great Work! You score 82/100</h3>
@@ -51,7 +51,7 @@ export default React.createClass({
                   </div> 
                 </div>
 
-                <div role="tabpanel" className="tab-pane" id="grammar">
+                <div role="tabpanel" className="tab-pane active" id="grammar">
                       <div className='row-fluid'>
                           <div className='col-md-6 col-md-offset-3' id='alert-container'> </div>
                       </div>
