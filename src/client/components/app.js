@@ -17,7 +17,7 @@ export default React.createClass({
     getInitialState() {
         return {
             loaded: false,
-            report: stub[1]
+            report: stub[0]
         };
     },
 
