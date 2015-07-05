@@ -20,14 +20,12 @@ export default React.createClass({
         const loaded = this.state.loaded;
 
         return (
-
-
-
             <Loader loaded={loaded}>
                 <form action='/submit-paper' method='post' encType='multipart/form-data' onSubmit={this.onSubmit} className="form-inline">
                     <div className="form-group">
-                      <label htmlFor='paper'>Upload Your Paper: </label>
+                      <label htmlFor='paper'>Upload Your Paper: &nbsp;</label>
                       <input type='file' name='paper' ref='paper' className="form-control"  />
+                      &nbsp;
                     </div>
                     <button type="submit" className="btn btn-primary" value="Submit">Submit</button>
                 </form>
