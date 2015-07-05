@@ -81,3 +81,13 @@
     background: #000;
   }
 }
+
+
+
+.modal-dialog { 
+  z-index: 2000!important;
+}
+
+.modal-backdrop.in{
+ z-index: 1000!important; 
+}

@@ -12,15 +12,15 @@ export default React.createClass({
             styleReport.init(this.props.report);
         }
     },
-    
+
     toggletable() {
       jQuery('#articletable').toggle();
     },
 
     render() {
-        return (<div>          
+        return (<div>
 
-                     
+
 
 
             <div className='container-fluid'>
@@ -45,10 +45,10 @@ export default React.createClass({
                     </div>
 
                     <div className="panel-body">
-                      <img src="public/img/visualisations1.png" />
+                      <img src="/public/img/visualisations1.png" />
                     </div>
 
-                  </div> 
+                  </div>
                 </div>
 
                 <div role="tabpanel" className="tab-pane active" id="grammar">
@@ -110,13 +110,13 @@ export default React.createClass({
                   </div>
 
                 <div role="tabpanel" className="tab-pane" id="plagiarism">
-                    <img src="public/img/visualisations2.png" />
+                    <img src="/public/img/visualisations2.png" />
                 </div>
-                
+
                 <div role="tabpanel" className="tab-pane" id="usability">
-                    <img src="public/img/visualisations3.png" />
+                    <img src="/public/img/visualisations3.png" />
                 </div>
-                
+
                 <div role="tabpanel" className="tab-pane" id="style">
                   <table className="table">
                         <thead>
@@ -185,7 +185,7 @@ export default React.createClass({
                         </tbody>
                       </table>
                 </div>
-                
+
                 <div role="tabpanel" className="tab-pane" id="reference">
                     <h1>Choose the standard you would like to comply with.</h1>
                     <div className="form-group">
@@ -198,7 +198,7 @@ export default React.createClass({
                       </select>
                     </div>
 
-                    
+
                     <table className="table" id="articletable" style={{'display':'none'}}>
                         <thead>
                           <tr>
