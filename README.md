@@ -99,3 +99,11 @@ To configure deployment from Travis:
 ~~~sh
 travis setup heroku
 ~~~
+
+## Credits
+
+Built with:
+
+- [Heroku](www.heroku.com)
+- [NLTK](http://www.nltk.org/)
+- [mikpanko/expresso](https://github.com/mikpanko/expresso) implementation of NLP with NLTK.
